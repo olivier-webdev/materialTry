@@ -20,9 +20,10 @@ const planeGeometry = new THREE.PlaneGeometry(1, 1);
 // });
 const material = new THREE.MeshLambertMaterial();
 // material.color = new THREE.Color("white");
+
 material.side = THREE.DoubleSide;
 
-// const fog = new THREE.Fog(0xffffff, 1, 10);
+const fog = new THREE.Fog(0xffffff, 1, 10);
 
 // initialize the mesh
 const mesh = new THREE.Mesh(geometry, material);
@@ -34,14 +35,14 @@ mesh3.position.x = -1.5;
 scene.add(mesh);
 scene.add(mesh2);
 scene.add(mesh3);
-// scene.fog = fog;
-// scene.background = new THREE.Color(0xffffff);
+scene.fog = fog;
+scene.background = new THREE.Color(0xffffff);
 
 // initialize the light
-const light = new THREE.AmbientLight("white", 0.5);
+const light = new THREE.AmbientLight("green", 0.5);
 scene.add(light);
 
-const pointLight = new THREE.PointLight("white", 1);
+const pointLight = new THREE.PointLight("green", 1);
 pointLight.position.set(5, 5, 2);
 scene.add(pointLight);
 
